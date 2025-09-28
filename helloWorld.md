@@ -30,7 +30,7 @@ int main() {
   Hello from thread!
   ```
 - what is this line 'terminate called without an active exception'?
--  main() reaches the end.
+-  main() reaches the end, t (a std::thread object) goes out of scope.
 -  C++ standard says: if a thread object is still joinable when destroyed → std::terminate() is called.
     That’s why you are seeing line 'terminate called without an active exception'
 - The `std::thread` destructor calls `std::terminate()` because `t` was still joinable.
