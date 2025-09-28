@@ -2,7 +2,7 @@
 
 This file demonstrates using `std::thread` in C++ with **join** and **without join**.
 
-## Example 2: Without `join()` (Incorrect)
+## Example 1: Without `join()` (Incorrect)
 
 ```cpp
 #include <iostream>
@@ -38,7 +38,7 @@ int main() {
 
 ---
 
-## Example 1: With `join()` (Correct Way)
+## Example 2: With `join()` (Correct Way)
 
 ```cpp
 #include <iostream>
