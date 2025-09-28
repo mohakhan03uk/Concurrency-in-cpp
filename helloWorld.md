@@ -17,10 +17,6 @@ int main() {
 
     std::thread t(hello);   // start the thread
 
-    // ERROR: no join or detach!
-    // when main exits, t is destroyed while still joinable
-    // this causes std::terminate() to be called
-
     return 0;
 }
 ```
@@ -30,10 +26,13 @@ int main() {
 - Program prints:
   ```
   Welcome to Concurrency in C++
-  terminate called without an active exception
+  terminate called without an active exception    
   Hello from thread!
   ```
-
+- what is this line 'terminate called without an active exception'?
+-  main() reaches the end.
+-  C++ standard says: if a thread object is still joinable when destroyed → std::terminate() is called.
+    That’s why you are seeing line 'terminate called without an active exception'
 - The `std::thread` destructor calls `std::terminate()` because `t` was still joinable.
 
 ---
