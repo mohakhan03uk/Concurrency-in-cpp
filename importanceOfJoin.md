@@ -348,8 +348,8 @@ std::jthread t(worker);  // automatically joins in destructor
 
 
 ## 📖 Learn more about RAII
-
-For a deeper dive into the RAII (Resource Acquisition Is Initialization) idiom in C++, see:  
-- [RAII on CppReference](https://en.cppreference.com/w/cpp/language/raii) (open source reference documentation)
+- RAII, or Resource Acquisition Is Initialization, is a programming idiom where the lifetime of a resource (like memory, a file handle, or a mutex) is tied to the lifetime of an object. In this pattern, the resource is acquired in an object's constructor and released in its destructor, automatically ensuring the resource is managed even if errors occur or the program flow is interrupted. This technique eliminates resource leaks and guarantees exception safety by leveraging object lifetime and scope exi
+- For a deeper dive into the RAII (Resource Acquisition Is Initialization) idiom in C++, see:  
+  [RAII on CppReference](https://en.cppreference.com/w/cpp/language/raii) (open source reference documentation)
 
 
